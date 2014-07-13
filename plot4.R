@@ -35,7 +35,7 @@ loadData <- function() {
   
   # read the ; seperated tet file
   
-  fullData <-  read.table("./household_power_consumption.txt",sep=";",as.is = TRUE , header=TRUE,na.strings="NA")
+  fullData <-  read.table("./household_power_consumption.txt",sep=";",as.is = TRUE , header=TRUE,na.strings=c("NA","?",""))
   
   # paste the date and time columns and format it into standard date format. 
   
@@ -112,6 +112,6 @@ plot4 <- function() {
 # do the plot
 # close the device. 
 
-png("plot4.png", height=480, width = 480)
+png("plot4.png", height=480, width = 480,units="px",bg="transparent")
 plot4()
 dev.off()

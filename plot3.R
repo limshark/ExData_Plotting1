@@ -35,7 +35,7 @@ loadData <- function() {
   
   # read the ';' seperated text file
   
-  fullData <-  read.table("./household_power_consumption.txt",sep=";",as.is = TRUE , header=TRUE,na.strings="NA")
+  fullData <-  read.table("./household_power_consumption.txt",sep=";",as.is = TRUE , header=TRUE,na.strings=c("NA","?",""))
   
   # paste the date and time columns and format it into standard date format. 
   
@@ -85,6 +85,6 @@ plot3 <- function() {
 
 
 
-png("plot3.png", height=480, width = 480)
+png("plot3.png", height=480, width = 480,units="px",bg="transparent")
 plot3()
 dev.off()
